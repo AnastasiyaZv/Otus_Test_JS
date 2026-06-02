@@ -1,9 +1,7 @@
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import ru.otus.facrory.WebDriverFactory;
+import ru.otus.factory.WebDriverFactory;
 import ru.otus.pages.MainPage;
 
 public abstract class AbsTest {

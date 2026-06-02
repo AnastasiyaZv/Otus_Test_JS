@@ -1,4 +1,4 @@
-package ru.otus.facrory;
+package ru.otus.factory;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
