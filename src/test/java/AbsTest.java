@@ -3,6 +3,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import ru.otus.facrory.WebDriverFactory;
 import ru.otus.pages.MainPage;
 
 public abstract class AbsTest {
@@ -13,15 +14,14 @@ public abstract class AbsTest {
 
     @BeforeEach
     public void webDriverStart() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        driver =new WebDriverFactory().create();
         mainPage = new MainPage(driver);
     }
 
-//    @AfterEach
-//    public void webDriverStop() {
-//        if (driver != null) {
-//            driver.quit();
-//        }
-//    }
+    @AfterEach
+    public void webDriverStop() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
 }

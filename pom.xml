@@ -64,6 +64,8 @@
                     <systemPropertyVariables>
                         <browser>chrome</browser>
                         <base.url>https://otus.home.kartushin.su/form.html</base.url>
+                        <pass>qweRt</pass>
+                        <login>Kate@mail.com</login>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>

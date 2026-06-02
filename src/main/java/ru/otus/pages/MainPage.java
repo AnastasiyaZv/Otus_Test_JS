@@ -5,34 +5,28 @@ import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 
 public class MainPage extends AbsPage {
 
-    private final String NAME = "username";
-    private final String EMAIL = "email";
-    private final String PASSWORD = "password";
-    private final String CONF_PASSWORD = "confirm_password";
-    private final String BIRTHDAY = "birthdate";
-    private final String LEVEL = "language_level";
-
-    @FindBy(id = NAME)
+    @FindBy(id = "username")
     private WebElement userName;
 
-    @FindBy(id = EMAIL)
+    @FindBy(id = "email")
     private WebElement userEmail;
 
-    @FindBy(id = PASSWORD)
+    @FindBy(id = "password")
     private WebElement userPass;
 
-    @FindBy(id = CONF_PASSWORD)
+    @FindBy(id = "confirm_password")
     private WebElement userConfPass;
 
-    @FindBy(id = BIRTHDAY)
+    @FindBy(id = "birthdate")
     private WebElement userBirthday;
 
-    @FindBy(id = LEVEL)
+    @FindBy(id = "language_level")
     private WebElement userLevel;
 
     @FindBy(css = "[type= 'submit']")
@@ -65,10 +59,6 @@ public class MainPage extends AbsPage {
         } catch (NoAlertPresentException e) {
             System.out.println("Алерта нет, продолжаем выполнение.");
         }
-    }
-
-    public String getTextOutput() {
-        return userOutput.getText();
     }
 
     public String expectedText(String name, String email) {
