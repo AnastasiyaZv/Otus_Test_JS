@@ -5,10 +5,11 @@ import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import ru.otus.annotations.Path;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-
+@Path("/form.html")
 public class MainPage extends AbsPage {
 
     @FindBy(id = "username")
@@ -36,7 +37,7 @@ public class MainPage extends AbsPage {
     private WebElement userOutput;
 
     public MainPage(WebDriver driver) {
-        super(driver, "");
+        super(driver);
     }
 
     public void inputFieldForm(String name, String email, String pass, String confPass, String birthday, String level) {

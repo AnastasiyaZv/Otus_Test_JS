@@ -1,6 +1,17 @@
+import jakarta.inject.Inject;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.openqa.selenium.WebDriver;
+import ru.otus.extensions.UIExtension;
+import ru.otus.factory.WebDriverFactory;
+import ru.otus.pages.MainPage;
 
-public class SendFormTest extends AbsTest {
+@ExtendWith(UIExtension.class)
+public class SendFormTest {
+
+    @Inject
+    private MainPage mainPage;
+
     private final String NAME = "Kate";
     private final String EMAIL = System.getProperty("login");
     private final String PASS = System.getProperty("pass");

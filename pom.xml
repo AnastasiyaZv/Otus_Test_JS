@@ -19,6 +19,10 @@
         <compiler.plugin.version>3.15.0</compiler.plugin.version>
         <surefire.plugin.version>3.5.5</surefire.plugin.version>
         <assertj.version>3.27.7</assertj.version>
+        <guice.version>7.0.0</guice.version>
+
+
+        <base.url/>
     </properties>
 
     <dependencies>
@@ -43,7 +47,21 @@
             <version>${assertj.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.google.inject</groupId>
+            <artifactId>guice</artifactId>
+            <version>${guice.version}</version>
+        </dependency>
     </dependencies>
+
+    <profiles>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <base.url>https://otus.home.kartushin.su/form.html</base.url>
+            </properties>
+        </profile>
+    </profiles>
 
     <build>
         <plugins>
@@ -63,7 +81,7 @@
                 <configuration>
                     <systemPropertyVariables>
                         <browser>chrome</browser>
-                        <base.url>https://otus.home.kartushin.su/form.html</base.url>
+                        <base.url>https://otus.home.kartushin.su</base.url>
                         <pass>qweRt</pass>
                         <login>Kate@mail.com</login>
                     </systemPropertyVariables>
