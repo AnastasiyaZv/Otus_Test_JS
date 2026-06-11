@@ -6,7 +6,7 @@ import ru.otus.annotations.Path;
 import ru.otus.common.AbsCommon;
 import ru.otus.exeptions.PathNotFoundException;
 
-public abstract class AbsPage extends AbsCommon {
+public abstract class AbsPage<T> extends AbsCommon {
 
     private final String baseUrl = System.getProperty("base.url");
     //protected WebDriver driver;
@@ -24,7 +24,8 @@ public abstract class AbsPage extends AbsCommon {
         throw new PathNotFoundException();
     }
 
-    public void open() {
+    public T open() {
         driver.get(baseUrl + getPath());
+        return (T)this;
     }
 }

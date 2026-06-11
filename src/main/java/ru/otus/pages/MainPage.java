@@ -10,7 +10,7 @@ import ru.otus.annotations.Path;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Path("/form.html")
-public class MainPage extends AbsPage {
+public class MainPage extends AbsPage<MainPage> {
 
     @FindBy(id = "username")
     private WebElement userName;
@@ -40,16 +40,17 @@ public class MainPage extends AbsPage {
         super(driver);
     }
 
-    public void inputFieldForm(String name, String email, String pass, String confPass, String birthday, String level) {
+    public MainPage inputFieldForm(String name, String email, String pass, String confPass, String birthday, String level) {
         userName.sendKeys(name);
         userEmail.sendKeys(email);
         userPass.sendKeys(pass);
         userConfPass.sendKeys(confPass);
         userBirthday.sendKeys(birthday);
         userLevel.sendKeys(level);
+        return this;
     }
 
-    public void clickButton() {
+    public MainPage clickButton() {
         try {
             button.click();
             // если пароли не совпадают, то переключаемся на окно
@@ -60,6 +61,7 @@ public class MainPage extends AbsPage {
         } catch (NoAlertPresentException e) {
             System.out.println("Алерта нет, продолжаем выполнение.");
         }
+        return this;
     }
 
     public String expectedText(String name, String email) {

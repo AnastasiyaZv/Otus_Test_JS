@@ -22,12 +22,9 @@ public class SendFormTest {
     @Test
     public void sendForm() {
         mainPage
-                .open();
-        mainPage
-                .inputFieldForm(NAME, EMAIL, PASS, CONF_PASS, BIRTHDAY, LEVEL);
-        mainPage
-                .clickButton();
-        mainPage.
-                isAssert(NAME, EMAIL);
+                .open()
+                .inputFieldForm(NAME, EMAIL, PASS, CONF_PASS, BIRTHDAY, LEVEL)
+                .clickButton()
+                .isAssert(NAME, EMAIL);
     }
 }
